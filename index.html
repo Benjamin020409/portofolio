@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Personnel</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body >
+    <header>
+        <h1>Bienvenue sur mon Portfolio</h1>
+        <h3 id="nom">AVOUMADO <span style="color: black">Benjamin</span></h3>
+        <nav>
+            <ul>
+                <li><a href="#contenu1">À propos</a></li>
+                <li><a href="#contenu2">Projets</a></li>
+                <li><a href="#contenu3" > Compétences</a></li>
+                <li><a href="#contenu4" >Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="contenu1">
+            <!-- Le contenu de 'about.html' sera chargé automatiquement ici -->
+            <h3 class="titre" >À propos</h3>
+            <div class="contenu-flex">
+                <div class="texte">
+                    
+                    <div id="desc">
+                        Je suis <span style="color: blue; font-weight: bold;">AVOUMADO Benjamin</span>,<br>
+                        passionné par la création de sites web modernes et interactifs.
+                    </div>
+                    <div id="desc">Je suis actuellement étudiant <span style="color: blue; font-weight: bold;">en dévelopement web</span> ,<br> et je cherche à améliorer mes compétences en JavaSript,HTML et CSS</div>
+                    <div id="desc">J'adore transformer mes idées en projets concrets <br> et exprimenter avec les nouvelles technologies.</div>
+                </div>
+                    <div><img src="image/moi1.jpg" alt="mon image" class="image-profil"></div>
+            </div>
+        </section>
+    </main>
+    <main>
+        <section id="contenu2">
+            <!-- Le contenu de 'about.html' sera chargé automatiquement ici -->
+            <h3 class="titre">Mes projets</h3>
+             <div class="contenu-flex">
+                <div class="vg"></div>
+                <div class="jeu">
+                    Un mini jeu en JavaSript,HTML et CSS qui calcul la racine carrée d'un nombre, trouve l'arrondi d'un nombre et Génère un nombre aléatoir entre 1 et 100 <br><br><br>
+                            <a href="exercice2.html" class="test">Voir</a>
+                </div>
+                <div class="jeu">
+                    Un mini jeu en JavaSript,HTML et CSS pour la gestion d'un tableau de nombre <br><br><br>
+                            <a href="exercice5.html" class="test">Voir</a>
+                </div>
+                <div class="jeu">
+                    Un mini jeu en JavaSript,HTML et CSS pour un calculateur de prêt hypothéquaire <br><br><br>
+                            <a href="calculateur.html" class="test">Voir</a>
+                </div>
+                
+
+                
+             </div>
+        </section>
+    </main>
+    <main id="contenu3">
+        <section>
+            <h3 class="titre">Mes Compétences</h3>
+            <div class="competences">
+                <div class="comp-tech">
+                    <h4>Compétences Techniques</h4>
+                    <ul>
+                        <li>HTML5 / CSS3</li>
+                        <li>JavaScript</li>
+                        <li>PHP / MySQL</li>
+                        <li>Développement Frontend (React.js)</li>
+                        <li>Développement Backend (Node.js)</li>
+                    </ul>
+                </div>
+                <div class="comp-perso">
+                    <h4>Compétences Personnelles</h4>
+                    <ul>
+                        <li>Communication efficace</li>
+                        <li>Travail en équipe</li>
+                        <li>Esprit analytique</li>
+                        <li>Gestion du temps</li>
+                        <li>Adaptabilité</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <main id="contenu4">
+        <section >
+
+            <h3 class="cont">Contact</h3>
+            <!-- Le contenu de 'about.html' sera chargé automatiquement ici -->
+             <div>
+                
+                    <h2><span style="color: white; font-weight: bold;">Vous avez un projet</span> <span style="color: blue; font-weight: bold;">n'hesitez pas à me contact !!</span></h2>
+                <form action="" class="formu">
+                    <label for="">Nom :</label><br>
+                    <input type="text" placeholder="Nom" id="nm"><br>
+                    <label for="">Prénom : </label><br>
+                    <input type="text" placeholder="Prénom" id="pn"><br>
+                    <label for="">Votre Sujet</label><br>
+                    <input type="text" placeholder="Sujet" id="sj"><br>
+                    <textarea name="" id="dc" placeholder="Decrivez votre projet!!"></textarea>
+                    <input type="submit" value="Envoyer" onclick="envoie()">
+
+                </form>
+             </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 AVOUMADO BENJAMIN - Tous droits réservés</p>
+    </footer>
+</body>
+</html>

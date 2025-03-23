@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur de Prêt Hypothécaire</title>
+    <style>
+        body{
+            background-color: burlywood;
+        }
+    </style>
+    <script>
+        function calculerPaiement() {
+            // Récupération des valeurs entrées par l'utilisateur
+            let montant = parseFloat(document.getElementById("montant").value);
+            let tauxAnnuel = parseFloat(document.getElementById("taux").value);
+            let dureeAnnees = parseInt(document.getElementById("duree").value, 10);
+
+            // Vérification des valeurs saisies
+            if (isNaN(montant) || montant <= 0) {
+                alert("Veuillez entrer un montant de prêt valide et positif.");
+                return;
+            }
+            if (isNaN(tauxAnnuel) || tauxAnnuel < 0) {
+                alert("Veuillez entrer un taux d'intérêt valide (positif ou nul).");
+                return;
+            }
+            if (isNaN(dureeAnnees) || dureeAnnees <= 0) {
+                alert("Veuillez entrer une durée valide en années (supérieure à zéro).");
+                return;
+            }
+
+            // Conversion du taux d'intérêt annuel en taux mensuel
+            let tauxMensuel = (tauxAnnuel / 100) / 12;
+            let nombrePaiements = dureeAnnees * 12; // Durée en mois
+
+            let paiementMensuel;
+
+            if (tauxMensuel === 0) { 
+                // Cas où le taux d'intérêt est 0% (pas d'intérêts, remboursement direct)
+                paiementMensuel = montant / nombrePaiements;
+            } else {
+                // Formule de l'amortissement du prêt
+                paiementMensuel = montant * (tauxMensuel * Math.pow(1 + tauxMensuel, nombrePaiements)) / 
+                                  (Math.pow(1 + tauxMensuel, nombrePaiements) - 1);
+            }
+
+            // Affichage du paiement mensuel formaté
+            document.getElementById("resultat").textContent = "Paiement Mensuel : " + paiementMensuel.toFixed(2) + " €";
+        }
+    </script>
+</head>
+<body>
+    <h2>Calculateur de Prêt Hypothécaire</h2>
+    
+    <label for="montant">Montant du prêt (€) :</label>
+    <input type="number" id="montant" placeholder="Ex: 50000">
+
+    <br><br>
+
+    <label for="taux">Taux d'intérêt annuel (%) :</label>
+    <input type="number" id="taux" placeholder="Ex: 5">
+
+    <br><br>
+
+    <label for="duree">Durée du prêt (années) :</label>
+    <input type="number" id="duree" placeholder="Ex: 20">
+
+    <br><br>
+
+    <button onclick="calculerPaiement()">Calculer</button>
+
+    <p id="resultat"></p>
+</body>
+</html>

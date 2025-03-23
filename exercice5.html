@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion du Tableau</title>
+    <style>
+        body{
+            background-color: darkgoldenrod;
+        }
+    </style>
+    <script>
+        // Tableau initial de nombres
+        let nombres = [23, 5, 12, 8, 34];
+
+        // Fonction pour afficher le tableau dans la page
+        function afficherTableau() {
+            document.getElementById("tableau").textContent = "Tableau : " + nombres.join(", ");
+        }
+
+        // Fonction pour ajouter un nombre au tableau
+        function ajouterNombre() {
+            let nouveauNombre = parseInt(document.getElementById("ajout").value, 10);
+            if (!isNaN(nouveauNombre)) {
+                nombres.push(nouveauNombre);
+                afficherTableau();
+            } else {
+                alert("Veuillez entrer un nombre valide.");
+            }
+        }
+
+        // Fonction pour supprimer un nombre du tableau
+        function supprimerNombre() {
+            let nombreASupprimer = parseInt(document.getElementById("suppression").value, 10);
+            let index = nombres.indexOf(nombreASupprimer);
+            if (index !== -1) {
+                nombres.splice(index, 1); // Supprimer l'élément trouvé
+                afficherTableau();
+            } else {
+                alert("Nombre non trouvé dans le tableau.");
+            }
+        }
+
+        // Fonction pour trier le tableau
+        function trierTableau() {
+            nombres.sort((a, b) => a - b);
+            afficherTableau();
+        }
+
+        // Afficher le tableau au chargement de la page
+        window.onload = afficherTableau;
+    </script>
+</head>
+<body>
+    <h2>Gestion d'un Tableau de Nombres</h2>
+    
+    <p id="tableau"></p>
+    
+    <label for="ajout">Ajouter un nombre :</label>
+    <input type="number" id="ajout">
+    <button onclick="ajouterNombre()">Ajouter</button>
+
+    <br><br>
+
+    <label for="suppression">Supprimer un nombre :</label>
+    <input type="number" id="suppression">
+    <button onclick="supprimerNombre()">Supprimer</button>
+
+    <br><br>
+
+    <button onclick="trierTableau()">Trier le tableau</button>
+</body>
+</html>
